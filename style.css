@@ -5,7 +5,7 @@ body {
     line-height: 22px;
     color: black;
     text-align: center;
-    background-image: url(../img/2149191361.jpg);
+    background-image: url("../img/2149191361.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -35,7 +35,7 @@ body {
   }
   
   .container {
-    width: 500px;
+    width: 800px;
     margin: 0 auto;
     background: rgba(255, 255, 255, 0.1);
     padding: 20px;

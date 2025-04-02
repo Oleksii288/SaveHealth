@@ -98,71 +98,75 @@ function amin(img) {
 
 const arrayOfVitaminObjests = [
   {
-    "id": 1,
+    "id": "003",
     "title": "Вітамін C",
-    "photo": "",
+    "photo": "vitamin-C.png",
     "description": "Вітамін C підтримує імунітет, зміцнює судини, зменшує ризик серцевих захворювань, покращує здоров'я шкіри, сприяє засвоєнню заліза.",
     "rating": "",
-    "useful":"",
+    "type":"",
   },
   {
-    "id": 2,
+    "id": "004",
     "title": "Вітамін D3",
-    "photo": "",
+    "photo": "vitamin-D.png",
     "description": "Вітамін D3 підтримує здоров'я кісток, зубів, м'язів, нервової системи, підтримує імунітет, зменшує ризик депресії.",
-    "rating": "",
-    "useful":"",
+    "rating":1,
+    "type":"",
   },
   {
-    "id": 3,
+    "id": "003",
     "title": "Вітамін E",
-    "photo": "",
+    "photo": "vitamin-E.png",
     "description": "Вітамін E є антиоксидантом, підтримує здоров'я шкіри, зміцнює імунітет, покращує здоров'я очей, сприяє засвоєнню вітамінів A, D, K.",
     "rating": "",
-    "useful":"",
+    "type":"",
   },
   {
-    "id": 4,
+    "id": "005",
     "title": "Вітамін B12",
-    "photo": "",
+    "photo": "vitamin-B.png",
     "description": "Вітамін B12 підтримує нормальну роботу нервової системи, підтримує здоров'я крові, покращує пам'ять, зміцнює імунітет.",
     "rating": "",
-    "useful":"",
+    "type":"",
   },
   {
-    "id": 5,
+    "id": "001",
     "title": "Вітамін A",
-    "photo": "",
+    "photo": "vitamin-A.png",
     "description": "Вітамін A підтримує здоров'я очей, шкіри, зубів, кісток, підтримує імунітет, зміцнює судини.",
     "rating": "",
-    "useful":"",
+    "type":"",
   },
   {
-    "id": 6,
+    "id": "006",
     "title": "Вітамін K2",
-    "photo": "",
+    "photo": "vitamin-K.png",
     "description": "Вітамін K2 підтримує здоров'я кісток, зубів, судин, підтримує нормальний обмін кальцію, зменшує ризик серцевих захворювань.",
     "rating": "",
-    "useful":"",
+    "type":"",
   },
   {
-    "id": 7,
+    "id": "007",
     "title": "Вітамін B6",
-    "photo": "",
+    "photo": "vitamin-B.png",
     "description": "Вітамін B6 підтримує нормальну роботу нервової системи, підтримує здоров'я шкіри, волосся, нігтів, покращує настрій.",
     "rating": "",
-    "useful":"",
+    "type":"",
   },
 ]
 
 //console.log(arrayOfVitaminObjests)
 
 arrayOfVitaminObjests.forEach((item) => {
-  console.log(item)
+  //console.log(item)
 
   let divVitamin = document.createElement('div')
   divVitamin.classList.add('vitamin')
-  divVitamin.innerText = item.title
-
+  divVitamin.innerHTML = `
+      <p>${item.id}</p>
+      <h3>${item.title}</h3>
+      <hr>
+      <img scr="img/vitamins/${item.photo}" alt="Зобраення ${item.title}">
+      <p>${item.description}</p>
   document.getElementById('p-vitamins').appendChild(divVitamin)
 })
