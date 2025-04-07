@@ -96,77 +96,19 @@ function amin(img) {
 
 //робота з об'єктами
 
-const arrayOfVitaminObjests = [
-  {
-    "id": "003",
-    "title": "Вітамін C",
-    "photo": "vitamin-C.png",
-    "description": "Вітамін C підтримує імунітет, зміцнює судини, зменшує ризик серцевих захворювань, покращує здоров'я шкіри, сприяє засвоєнню заліза.",
-    "rating": "",
-    "type":"",
-  },
-  {
-    "id": "004",
-    "title": "Вітамін D3",
-    "photo": "vitamin-D.png",
-    "description": "Вітамін D3 підтримує здоров'я кісток, зубів, м'язів, нервової системи, підтримує імунітет, зменшує ризик депресії.",
-    "rating":1,
-    "type":"",
-  },
-  {
-    "id": "003",
-    "title": "Вітамін E",
-    "photo": "vitamin-E.png",
-    "description": "Вітамін E є антиоксидантом, підтримує здоров'я шкіри, зміцнює імунітет, покращує здоров'я очей, сприяє засвоєнню вітамінів A, D, K.",
-    "rating": "",
-    "type":"",
-  },
-  {
-    "id": "005",
-    "title": "Вітамін B12",
-    "photo": "vitamin-B.png",
-    "description": "Вітамін B12 підтримує нормальну роботу нервової системи, підтримує здоров'я крові, покращує пам'ять, зміцнює імунітет.",
-    "rating": "",
-    "type":"",
-  },
-  {
-    "id": "001",
-    "title": "Вітамін A",
-    "photo": "vitamin-A.png",
-    "description": "Вітамін A підтримує здоров'я очей, шкіри, зубів, кісток, підтримує імунітет, зміцнює судини.",
-    "rating": "",
-    "type":"",
-  },
-  {
-    "id": "006",
-    "title": "Вітамін K2",
-    "photo": "vitamin-K.png",
-    "description": "Вітамін K2 підтримує здоров'я кісток, зубів, судин, підтримує нормальний обмін кальцію, зменшує ризик серцевих захворювань.",
-    "rating": "",
-    "type":"",
-  },
-  {
-    "id": "007",
-    "title": "Вітамін B6",
-    "photo": "vitamin-B.png",
-    "description": "Вітамін B6 підтримує нормальну роботу нервової системи, підтримує здоров'я шкіри, волосся, нігтів, покращує настрій.",
-    "rating": "",
-    "type":"",
-  },
-]
+fetch('js/vitamins.json')
+    .then(response => response.json())
+    .then(data =>{
+      data.forEach((item)) => {
+        //console.log(item)
 
-//console.log(arrayOfVitaminObjests)
+        let divVitamin = document.createElement('div')
+        divVitamin.classList.add('vitanin')
+        divVitamin.innerHTML = `
+              <p>${item.id}</p>
+              <h3>${item.title}</h3>
+              <hr>
+              <img scr="img/vitamins/${item.photo}
 
-arrayOfVitaminObjests.forEach((item) => {
-  //console.log(item)
-
-  let divVitamin = document.createElement('div')
-  divVitamin.classList.add('vitamin')
-  divVitamin.innerHTML = `
-      <p>${item.id}</p>
-      <h3>${item.title}</h3>
-      <hr>
-      <img scr="img/vitamins/${item.photo}" alt="Зобраення ${item.title}">
-      <p>${item.description}</p>
-  document.getElementById('p-vitamins').appendChild(divVitamin)
-})
+      }
+    })
