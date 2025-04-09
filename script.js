@@ -1,4 +1,7 @@
-console.log('Script connected!');
+cconsole.log('Script connected!');
+
+
+
 
 const arrayOfFluTips = [
   "Пийте багато теплої рідини для зволоження",  
@@ -95,20 +98,31 @@ function amin(img) {
 }
 
 //робота з об'єктами
+fetch('js/Vitamins.json')
+  .then(response => response.json())
+  .then(data =>{
+    data.forEach((item) => {
 
-fetch('js/vitamins.json')
-    .then(response => response.json())
-    .then(data =>{
-      data.forEach((item)) => {
-        //console.log(item)
+    let divVitamin = document.createElement('div')
+    divVitamin.classList.add('vitamin')
+    divVitamin.innerHTML = `
+      <span>${item.id}</span>
+    <h3>${item.title}</h3>
+    <hr>
+    <img src=${item.photo} alt="vitamin">
+    <p>${item.description}</p>
+    <div>
+    <img src=${item.scheme} alt="vitamin-scheme">
+    <p>${'💚'.repeat(item.rating) + '🤍'.repeat(5-item.rating)}</p>
+    <p>${item.type}</p>
+    </div>`
+  
+    document.getElementById('p-vitamins').appendChild(divVitamin)
+  })
+}) 
+.catch(error => console.error('Error fetching data:', error));
 
-        let divVitamin = document.createElement('div')
-        divVitamin.classList.add('vitanin')
-        divVitamin.innerHTML = `
-              <p>${item.id}</p>
-              <h3>${item.title}</h3>
-              <hr>
-              <img scr="img/vitamins/${item.photo}
+//console.log(arrayOfVitaminObjests)
 
-      }
-    })
+
+  console.log(item.id)
